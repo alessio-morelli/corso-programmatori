@@ -1,8 +1,51 @@
-.paragrafo1 {
-    text-align: center;
-    color: #5a5a5a;
+/* font, collassamento bordi e dimensioni alla tabella*/
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.rosso {
-    color:  red;
+/* bordi, allineamento testo e spaziatura*/
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/* imposta il colore di sfondo a righe alterne alla tabella*/
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* spaziatura per i tioli h1 */
+h1 {
+    margin-top: 40px;
+}
+
+.esempioHover:hover {
+    text-decoration: underline;
+}
+
+.margineLaterale {
+    padding: 0 200px;
+}
+
+.showOnMobile {
+    display: none;
+}
+
+.hideOnMobile {
+    display: block;
+}
+
+@media screen and (max-width: 980px) {
+    .margineLaterale {
+        padding: 0;
+    }
+    .showOnMobile {
+        display: block;
+    }
+    .hideOnMobile {
+        display: none;
+    }
 }

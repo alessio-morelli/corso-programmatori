@@ -1,27 +1,136 @@
 <html>
     <head>
-        <title>Pagina di alessio</title>
+        <title>Dati Covid</title>
         <link rel="stylesheet" href="style/styleAlessio.css">
     </head>
-    <body>
-        <h1>Titolo pagina</h1>
-        <p class="paragrafo1">
-            Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-            Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-            Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-            Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-            Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-        </p>
-        <p class="paragrafo1 rosso">
-            <b>
-                Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-                Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-                Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-                Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-                Testo dell'articolo aoisfjdoaisjfoajewèasoeasoienfoasne<br/>
-            </b>
-        </p>
-        <h2 class="rosso">Titolo 2</h2>
-        <h3>Titolo 3</h3>
+    <body class="margineLaterale">
+        <!-- Titolo -->
+        <div>
+            <h1 style="text-align: center;">Dati Covid</h1>
+        </div>
+
+        <div style="display: flex;">
+            <div style="width: 40%;">
+                <img alt="Covid" src="images/covid.png" style="width: 40%;">
+            </div>
+            <div style="width: 60%;">
+                <!-- Esempio Hover -->
+                <p class="esempioHover">Queste sono le statistiche del covid in toscana</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <!-- Tabella -->
+            <table>
+                <tr>
+                    <th>Provincia</th>
+                    <th>Contagi</th>
+                    <th>Curati</th>
+                    <th>Vaccinati</th>
+                </tr>
+                <tr>
+                  <td>Li</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td id="vacciniLivorno">150</td>
+                </tr>
+                <tr>
+                    <td>Pi</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>160</td>
+                </tr>
+                <tr>
+                    <td>Fi</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>200</td>
+                </tr>
+              </table>
+        </div>
+
+        <div style="margin: 20px;">
+            <h2>Aggiunta dati</h2>
+            <div style="display: flex;">
+                <span>Nuovi vaccini effettuati nella provincia di Livorno</span>
+                <input id="numVaccini" type="number" style="margin: 0 20px;">
+                <button id="salva">Salva</button>
+            </div>
+        </div>
+
+        <!-- Elemento visibile SOLO da telefono -->
+        <div>
+            <h1 class="showOnMobile" style="text-align: center;">Video Di Esempio (visibile solo su schermi piccoli < 980px)</h1>
+        </div>
+
+        <!-- Elemento NON visibile su telefono -->
+        <div class="hideOnMobile">
+            <h1 style="text-align: center;">Video Di Esempio (visibile solo su schermi grandi > 980px)</h1>
+        </div>
+
+        <!-- Video -->
+        <div style="text-align: center;">
+            <video width="500px" controls autoplay muted>
+                <source src="videos/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <!-- 
+            justify-content è una proprietà che possiamo usare insieme a flex.
+            Serve ad indicare come devono essere posizionati gli elementi all'interno.
+            La approfondiamo nella prossima lezione!
+        -->
+        <div style="display: flex; justify-content: space-around;">
+        <!-- Lista puntata-->
+            <div>
+                <h2>Regioni arancioni</h2>
+                <ul>
+                    <li>Toscana</li>
+                    <li>Emilia Romagna</li>
+                </ul>
+            </div>
+            <!-- Lista numerata-->
+            <div>
+                <h2>Regioni arancioni</h2>
+                <ol>
+                    <li>Toscana</li>
+                    <li>Emilia Romagna</li>
+                    <li>Lazio</li>
+                    <li>Lombardia</li>
+                </ul>
+            </div>
+
+            <!-- Lista numerati a partire da un numero indicato-->
+            <div>
+                <h2>Regioni gialle</h2>
+                <ol start="5">
+                    <li>Campania</li>
+                    <li>Basilicata</li>
+                </ul>
+            </div>
+
+        </div>
+        
+
+        <!-- 
+            Esempio di manipolazione del DOM client-side
+            Questa è solo un introduzione.
+            Farete delle lezioni specifiche su javascript.
+        -->
+        <script type="text/javascript">
+            var bottoneSalva = document.getElementById("salva");
+            var numVaccini = document.getElementById("numVaccini");
+            var vacciniLivorno = document.getElementById("vacciniLivorno");
+
+            
+            bottoneSalva.onclick = function() {
+
+                var totaleVaccini = parseInt(vacciniLivorno.innerHTML) + parseInt(numVaccini.value);
+                
+                vacciniLivorno.innerHTML = totaleVaccini;
+                
+            }
+        </script>
     </body>
 </html>
