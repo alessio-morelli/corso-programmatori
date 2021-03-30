@@ -9,3 +9,7 @@
 .sfondopagina {
      background-color: tan;
 }
+.li {
+    float: left;
+    margin: 0 20px;
+}
